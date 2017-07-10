@@ -10,13 +10,13 @@ namespace App\Model;
 
 class Comment extends BaseStoreTracking
 {
-    public $storeid;
+    public $mid;
     public $content;
 
     public function columnMap()
     {
         return parent::columnMap() + [
-                'storeid' => 'storeid',
+                'mid' => 'mid',
                 'content' => 'content'
             ];
     }

@@ -2,33 +2,32 @@
 /**
  * Created by PhpStorm.
  * User: BangDinh
- * Date: 7/6/17
- * Time: 15:25
+ * Date: 7/10/17
+ * Time: 10:01
  */
 
 namespace App\Resources;
 
-use App\Controllers\StoreController;
-use App\Model\Store;
-use App\Transformers\StoreTransformer;
+use App\Controllers\ReviewTypeController;
+use App\Model\ReviewType;
+use App\Transformers\ReviewTypeTransformer;
 use CayBua\Constants\AclRoles;
 use CayBua\Resources\ApiResource;
 use PhalconRest\Api\ApiEndpoint;
 
-class StoreResource extends ApiResource
+class ReviewTypeResource extends ApiResource
 {
     public function initialize()
     {
         $this
-            ->name('Store')
-            ->model(Store::class)
+            ->name('ReviewType')
+            ->model(ReviewType::class)
             ->expectsJsonData()
-            ->transformer(StoreTransformer::class)
-            ->handler(StoreController::class)
+            ->transformer(ReviewTypeTransformer::class)
+            ->handler(ReviewTypeController::class)
             ->itemKey('item')
             ->collectionKey('items')
-            ->deny(AclRoles::UNAUTHORIZED)
-            ->allow(AclRoles::USER)
+            ->allow(AclRoles::UNAUTHORIZED)
             ->endpoint(
                 ApiEndpoint::all()
             )
@@ -42,9 +41,8 @@ class StoreResource extends ApiResource
                 ApiEndpoint::update()
             )
             ->endpoint(
-                ApiEndpoint::get('/search')
-                ->name('search')
-            )
-        ;
+                ApiEndpoint::get('/tree', 'tree')
+                    ->name('tree')
+            );
     }
 }

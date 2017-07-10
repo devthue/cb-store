@@ -21,14 +21,9 @@ abstract class BaseStoreTransformer extends Transformer
     public function transform($object)
     {
         return [
-            'cid' => (int)$object->cid,
-            'creatorid' => (int)$object->creatorid,
             'id' => (int)$object->id,
             'displayorder' => (int)$object->displayorder,
             'status' => (int)$object->status,
-            'isdeleted' => (int)$object->isdeleted,
-            'deletedby' => (int)$object->deletedby,
-            'datedeleted' => (int)$object->datedeleted,
         ];
     }
 }

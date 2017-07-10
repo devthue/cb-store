@@ -13,7 +13,7 @@ use CayBua\Model\BaseModel;
 abstract class BaseStoreTracking extends BaseModel
 {
     public $cid;
-    public $creatorid;
+    public $uid;
     public $id;
     public $displayorder;
     public $status;
@@ -23,9 +23,9 @@ abstract class BaseStoreTracking extends BaseModel
 
     public function columnMap()
     {
-        return [
+        return parent::columnMap() + [
             'cid' => 'cid',
-            'creatorid' => 'creatorid',
+            'uid' => 'uid',
             'id' => 'id',
             'displayorder' => 'displayorder',
             'status' => 'status',

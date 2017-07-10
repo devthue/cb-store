@@ -5,6 +5,7 @@ namespace App\Bootstrap;
 use App\Resources\AlbumResource;
 use App\Resources\CommentResource;
 use App\Resources\MediaResource;
+use App\Resources\ReviewTypeResource;
 use App\Resources\StoreResource;
 use CayBua\BootstrapInterface;
 use Phalcon\Config;
@@ -19,5 +20,6 @@ class CollectionBootstrap implements BootstrapInterface
         $api->resource(new AlbumResource('/album'));
         $api->resource(new CommentResource('/comment'));
         $api->resource(new MediaResource('/media'));
+        $api->resource(new ReviewTypeResource('/reviewtype'));
     }
 }

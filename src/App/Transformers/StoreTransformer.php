@@ -21,19 +21,20 @@ class StoreTransformer extends BaseStoreTransformer
     public function transform($object)
     {
         return parent::transform($object) + [
-                'logoid' => $object->logoid,
                 'name' => $object->name,
                 'description' => $object->description,
                 'phone' => $object->phone,
                 'email' => $object->email,
                 'website' => $object->website,
                 'facebook' => $object->facebook,
-                'workdaystart' => $object->workdaystart,
-                'workdayend' => $object->workdayend,
+                'instagram' => $object->instagram,
+                'opening' => $object->opening,
                 'address' => $object->address,
                 'region' => $object->region,
                 'latitude' => $object->latitude,
                 'longitude' => $object->longitude,
+                'logopath' => $object->logopath,
+                'coverpath' => $object->coverpath
             ];
     }
 

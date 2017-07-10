@@ -23,7 +23,7 @@ class CommentTransformer extends BaseStoreTransformer
     {
 
         return parent::transform($object) + [
-                'storeid' => $object->storeid,
+                'mid' => $object->mid,
                 'content' => $object->content
             ];
     }

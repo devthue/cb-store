@@ -41,6 +41,9 @@ class CommentResource extends ApiResource
             ->endpoint(
                 ApiEndpoint::update()
             )
+            ->endpoint(
+                ApiEndpoint::remove()
+            )
         ;
     }
 }

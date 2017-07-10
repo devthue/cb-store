@@ -10,22 +10,24 @@ namespace App\Model;
 
 class Media extends BaseStoreTracking
 {
-    public $storeid;
-    public $albumid;
+    public $sid;
+    public $aid;
     public $type;
     public $name;
     public $path;
     public $resourceserver;
+    public $commentcount;
 
     public function columnMap()
     {
         return parent::columnMap() + [
-                'storeid' => 'storeid',
-                'albumid' => 'albumid',
+                'sid' => 'sid',
+                'aid' => 'aid',
                 'type' => 'type',
                 'name' => 'name',
                 'path' => 'path',
                 'resourceserver' => 'resourceserver',
+                'commentcount' => 'commentcount'
             ];
     }
 
