@@ -26,6 +26,11 @@ class Store extends BaseStoreTracking
     public $logopath;
     public $coverpath;
 
+    public function getSource()
+    {
+        return 'cb_store';
+    }
+
     public function columnMap()
     {
         return parent::columnMap() + [

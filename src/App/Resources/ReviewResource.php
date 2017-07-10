@@ -27,8 +27,7 @@ class ReviewResource extends ApiResource
             ->handler(ReviewController::class)
             ->itemKey('item')
             ->collectionKey('items')
-            ->deny(AclRoles::UNAUTHORIZED)
-            ->allow(AclRoles::USER)
+            ->allow(AclRoles::UNAUTHORIZED)
             ->endpoint(
                 ApiEndpoint::all()
             )
