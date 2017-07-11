@@ -41,8 +41,11 @@ class ReviewTypeService
     public function getReviewTypeTree()
     {
         $reviewTypes = self::findAll();
-        $reviewTypesProcess = $this->processReviewType($reviewTypes);
-        $reviewTypesTree = $this->createTree($reviewTypesProcess, $reviewTypesProcess[0]);
+        $reviewTypesTree = array();
+        if(count($reviewTypes->toArray()) > 0){
+            $reviewTypesProcess = $this->processReviewType($reviewTypes);
+            $reviewTypesTree = $this->createTree($reviewTypesProcess, $reviewTypesProcess[0]);
+        }
         return $reviewTypesTree;
     }
 

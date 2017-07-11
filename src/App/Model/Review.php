@@ -11,8 +11,6 @@ namespace App\Model;
 class Review extends BaseStoreTracking
 {
     public $sid;
-    public $rtid;
-    public $rpid;
     public $servicefeedback;
     public $improvefeedback;
 
@@ -25,8 +23,6 @@ class Review extends BaseStoreTracking
     {
         return parent::columnMap() + [
                 'sid' => 'sid',
-                'rtid' => 'rtid',
-                'rpid' => 'rpid',
                 'servicefeedback' => 'servicefeedback',
                 'improvefeedback' => 'improvefeedback',
             ];

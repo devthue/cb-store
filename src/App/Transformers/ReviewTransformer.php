@@ -21,11 +21,9 @@ class ReviewTransformer extends BaseStoreTransformer
     public function transform($object)
     {
         return parent::transform($object) + [
-                'sid' => (int)$object->sid,
-                'rtid' => (int)$object->rtid,
-                'rpid' => (int)$object->rpid,
-                'servicefeedback' => (string)$object->servicefeedback,
-                'improvefeedback' => (string)$object->improvefeedback,
+                'sid' => $object->sid,
+                'servicefeedback' => $object->servicefeedback,
+                'improvefeedback' => $object->improvefeedback,
             ];
     }
 }

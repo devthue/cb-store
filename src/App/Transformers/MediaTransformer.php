@@ -21,12 +21,13 @@ class MediaTransformer extends BaseStoreTransformer
     public function transform($object)
     {
         return parent::transform($object) + [
-                'storeid' => $object->storeid,
-                'albumid' => $object->albumid,
-                'type' => $object->type,
+                'sid' => $object->sid,
+                'aid' => $object->aid,
+                'fileextension' => $object->fileextension,
                 'name' => $object->name,
                 'path' => $object->path,
                 'resourceserver' => $object->resourceserver,
+                'commentcount' => $object->commentcount,
             ];
     }
 

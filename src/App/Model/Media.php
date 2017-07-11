@@ -12,7 +12,7 @@ class Media extends BaseStoreTracking
 {
     public $sid;
     public $aid;
-    public $type;
+    public $fileextension;
     public $name;
     public $path;
     public $resourceserver;
@@ -23,11 +23,11 @@ class Media extends BaseStoreTracking
         return parent::columnMap() + [
                 'sid' => 'sid',
                 'aid' => 'aid',
-                'type' => 'type',
+                'fileextension' => 'fileextension',
                 'name' => 'name',
                 'path' => 'path',
                 'resourceserver' => 'resourceserver',
-                'commentcount' => 'commentcount'
+                'commentcount' => 'commentcount',
             ];
     }
 
