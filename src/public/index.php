@@ -11,11 +11,9 @@ $response = null;
 
 try {
     define("ROOT_DIR", __DIR__ . '/..');
-    define("APP_DIR", ROOT_DIR . '/src');
+    define("APP_DIR", ROOT_DIR . '/app');
     define("VENDOR_DIR", ROOT_DIR . '/vendor');
-    define("CONFIG_DIR", ROOT_DIR . '/configs');
-
-    define('APPLICATION_ENV', getenv('APPLICATION_ENV') ?: 'development');
+    define("CONFIG_DIR", APP_DIR . '/configs');
 
     // Autoload dependencies
     require VENDOR_DIR . '/autoload.php';
@@ -54,7 +52,9 @@ try {
     // Bootstrap components
     $bootstrap = new CayBua\Bootstrap(
         new CayBua\Bootstrap\ServiceBootstrap,
-        new App\Bootstrap\CollectionBootstrap
+        new CayBua\Bootstrap\MiddlewareBootstrap,
+        new App\Bootstrap\CollectionBootstrap,
+        new CayBua\Bootstrap\AclBootstrap
     );
 
     $bootstrap->run($app, $di, $config);
