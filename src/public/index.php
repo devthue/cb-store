@@ -13,7 +13,7 @@ try {
     define("ROOT_DIR", __DIR__ . '/..');
     define("APP_DIR", ROOT_DIR . '/library');
     define("VENDOR_DIR", ROOT_DIR . '/vendor');
-    define("CONFIG_DIR", APP_DIR . '/configs');
+    define("CONFIG_DIR", ROOT_DIR . '/configs');
 
     // Autoload dependencies
     require VENDOR_DIR . '/autoload.php';
