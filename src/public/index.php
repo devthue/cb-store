@@ -21,7 +21,7 @@ try {
     $loader = new \Phalcon\Loader();
 
     $loader->registerNamespaces([
-        'App' => APP_DIR . '/App'
+        'App' => APP_DIR
     ]);
 
     $loader->register();
