@@ -11,7 +11,7 @@ $response = null;
 
 try {
     define("ROOT_DIR", __DIR__ . '/..');
-    define("APP_DIR", ROOT_DIR . '/app');
+    define("APP_DIR", ROOT_DIR . '/library');
     define("VENDOR_DIR", ROOT_DIR . '/vendor');
     define("CONFIG_DIR", APP_DIR . '/configs');
 
