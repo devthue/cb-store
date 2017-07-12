@@ -1,17 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: BangDinh
- * Date: 7/7/17
- * Time: 16:12
- */
 
 namespace App\Model;
 
-class ReviewProperty extends BaseStoreTracking
+use CayBua\Model\BaseModel;
+
+class ReviewProperty extends BaseModel
 {
+    public $cid;
+    public $uid;
+    public $id;
     public $name;
     public $description;
+    public $displayorder;
+    public $ipaddress;
+    public $datecreated;
+    public $datemodified;
 
     public function getSource()
     {
@@ -21,15 +24,15 @@ class ReviewProperty extends BaseStoreTracking
     public function columnMap()
     {
         return parent::columnMap() + [
+                'cid' => 'cid',
+                'uid' => 'uid',
+                'id' => 'id',
                 'name' => 'name',
-                'description' => 'description'
+                'description' => 'description',
+                'displayorder' => 'displayorder',
+                'ipaddress' => 'ipaddress',
+                'datecreated' => 'datecreated',
+                'datemodified' => 'datemodified',
             ];
-    }
-
-    public function initialize()
-    {
-        $this->hasMany('id', ReviewTypeProperty::class, 'rpid', [
-            'alias' => ReviewTypeProperty::class,
-        ]);
     }
 }

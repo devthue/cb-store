@@ -1,20 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: BangDinh
- * Date: 7/11/17
- * Time: 11:21
- */
 
 namespace App\Model;
 
-class ReviewDetail extends BaseStoreTracking
+use CayBua\Model\BaseModel;
+
+class ReviewDetail extends BaseModel
 {
-    public $uid;
     public $cid;
+    public $uid;
     public $rid;
-    public $rtid;
-    public $rpid;
+    public $rrtpid;
+    public $id;
 
     public function getSource()
     {
@@ -24,11 +20,11 @@ class ReviewDetail extends BaseStoreTracking
     public function columnMap()
     {
         return parent::columnMap() + [
-                'uid' => 'uid',
                 'cid' => 'cid',
+                'uid' => 'uid',
                 'rid' => 'rid',
-                'rtid' => 'rtid',
-                'rpid' => 'rpid',
+                'rrtpid' => 'rrtpid',
+                'id' => 'id',
             ];
     }
 }

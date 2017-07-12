@@ -1,16 +1,14 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: BangDinh
- * Date: 7/6/17
- * Time: 15:21
- */
-
 namespace App\Model;
 
-class Store extends BaseStoreTracking
+use CayBua\Model\BaseModel;
+
+class Store extends BaseModel
 {
+    public $cid;
+    public $uid;
+    public $id;
     public $name;
     public $description;
     public $phone;
@@ -25,6 +23,14 @@ class Store extends BaseStoreTracking
     public $longitude;
     public $logopath;
     public $coverpath;
+    public $displayorder;
+    public $status;
+    public $isdeleted;
+    public $deletedby;
+    public $ipaddress;
+    public $datecreated;
+    public $datemodified;
+    public $datedeleted;
 
     public function getSource()
     {
@@ -34,6 +40,9 @@ class Store extends BaseStoreTracking
     public function columnMap()
     {
         return parent::columnMap() + [
+                'cid' => 'cid',
+                'uid' => 'uid',
+                'id' => 'id',
                 'name' => 'name',
                 'description' => 'description',
                 'phone' => 'phone',
@@ -47,7 +56,15 @@ class Store extends BaseStoreTracking
                 'latitude' => 'latitude',
                 'longitude' => 'longitude',
                 'logopath' => 'logopath',
-                'coverpath' => 'coverpath'
+                'coverpath' => 'coverpath',
+                'displayorder' => 'displayorder',
+                'status' => 'status',
+                'isdeleted' => 'isdeleted',
+                'deletedby' => 'deletedby',
+                'ipaddress' => 'ipaddress',
+                'datecreated' => 'datecreated',
+                'datemodified' => 'datemodified',
+                'datedeleted' => 'datedeleted',
             ];
     }
 }

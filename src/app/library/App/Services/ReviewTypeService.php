@@ -10,7 +10,7 @@ namespace App\Services;
 
 use App\Model\ReviewProperty;
 use App\Model\ReviewType;
-use App\Model\ReviewTypeProperty;
+use App\Model\ReviewRelTypeProperty;
 use App\Transformers\ReviewPropertyTransformer;
 use App\Transformers\ReviewTypeTransformer;
 
@@ -75,10 +75,10 @@ class ReviewTypeService
      */
     private function getProperty($reviewType)
     {
-        $reviewTypeProperties = $reviewType->getRelated(ReviewTypeProperty::class);
+        $reviewTypeProperties = $reviewType->getRelated(ReviewRelTypeProperty::class);
         $properties = array();
         $reviewPropertyTransformer = new ReviewPropertyTransformer();
-        /** @var ReviewTypeProperty $reviewTypeProperty */
+        /** @var ReviewRelTypeProperty $reviewTypeProperty */
         foreach ($reviewTypeProperties as $reviewTypeProperty) {
             $reviewProperty = $reviewTypeProperty->getRelated(ReviewProperty::class);
             if (!$reviewProperty) {
