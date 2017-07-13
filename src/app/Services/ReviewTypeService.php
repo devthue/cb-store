@@ -29,7 +29,7 @@ class ReviewTypeService
             return self::$dataCache[self::KEY_CACHE_FIND_ALL];
         } else {
             self::$dataCache[self::KEY_CACHE_FIND_ALL] = ReviewType::find([
-                'order' => 'displayorder ASC, id ASC'
+                'order' => 'displayorder ASC'
             ]);
         }
         return self::$dataCache[self::KEY_CACHE_FIND_ALL];

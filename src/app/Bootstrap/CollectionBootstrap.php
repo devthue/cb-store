@@ -22,10 +22,10 @@ class CollectionBootstrap extends \CayBua\Bootstrap\CollectionBootstrap implemen
     {
         parent::run($api, $di, $config);
         $api->resource(new StoreResource('/store'));
-        $api->resource(new AlbumResource('/album'));
-        $api->resource(new CommentResource('/comment'));
-        $api->resource(new MediaResource('/media'));
-        $api->resource(new ReviewResource('/review'));
-        $api->resource(new ReviewTypeResource('/reviewtype'));
+        $api->resource(new AlbumResource('/store/album'));
+        $api->resource(new CommentResource('/store/comment'));
+        $api->resource(new MediaResource('/store/media'));
+        $api->resource(new ReviewResource('/store/review'));
+        $api->resource(new ReviewTypeResource('/store/review/type'));
     }
 }
