@@ -9,9 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Store;
-use PhalconRest\Transformers\Transformer;
+use PhalconRest\Transformers\ModelTransformer;
 
-class StoreTransformer extends Transformer
+class StoreTransformer extends ModelTransformer
 {
     protected $modelClass = Store::class;
 

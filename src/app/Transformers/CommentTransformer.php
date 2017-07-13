@@ -10,9 +10,9 @@ namespace App\Transformers;
 
 
 use App\Model\Comment;
-use PhalconRest\Transformers\Transformer;
+use PhalconRest\Transformers\ModelTransformer;
 
-class CommentTransformer extends Transformer
+class CommentTransformer extends ModelTransformer
 {
     protected $modelClass = Comment::class;
 

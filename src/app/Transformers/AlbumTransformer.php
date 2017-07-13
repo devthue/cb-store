@@ -9,9 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Album;
-use PhalconRest\Transformers\Transformer;
+use PhalconRest\Transformers\ModelTransformer;
 
-class AlbumTransformer extends Transformer
+class AlbumTransformer extends ModelTransformer
 {
     protected $modelClass = Album::class;
 
