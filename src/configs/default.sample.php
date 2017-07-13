@@ -22,7 +22,7 @@ return [
         'user' => [
             'url' => 'http://user.caudatfarm.local:8080/',
             'action' => [
-                'me' => 'users/me'
+                'me' => 'user/me'
             ]
         ]
     ]
