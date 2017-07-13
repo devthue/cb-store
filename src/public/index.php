@@ -54,6 +54,7 @@ try {
         new CayBua\Bootstrap\ServiceBootstrap,
         new CayBua\Bootstrap\MiddlewareBootstrap,
         new App\Bootstrap\CollectionBootstrap,
+        new CayBua\Bootstrap\RouteBootstrap,
         new CayBua\Bootstrap\AclBootstrap
     );
 

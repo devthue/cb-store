@@ -9,8 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Media;
+use PhalconRest\Transformers\Transformer;
 
-class MediaTransformer extends BaseStoreTransformer
+class MediaTransformer extends Transformer
 {
     protected $modelClass = Media::class;
 
@@ -20,15 +21,15 @@ class MediaTransformer extends BaseStoreTransformer
      */
     public function transform($object)
     {
-        return parent::transform($object) + [
-                'sid' => $object->sid,
-                'aid' => $object->aid,
-                'fileextension' => $object->fileextension,
-                'name' => $object->name,
-                'path' => $object->path,
-                'resourceserver' => $object->resourceserver,
-                'commentcount' => $object->commentcount,
-            ];
+        return [
+            'sid' => $object->sid,
+            'aid' => $object->aid,
+            'fileextension' => $object->fileextension,
+            'name' => $object->name,
+            'path' => $object->path,
+            'resourceserver' => $object->resourceserver,
+            'commentcount' => $object->commentcount,
+        ];
     }
 
 }

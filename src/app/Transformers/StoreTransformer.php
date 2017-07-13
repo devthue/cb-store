@@ -9,8 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Store;
+use PhalconRest\Transformers\Transformer;
 
-class StoreTransformer extends Trans
+class StoreTransformer extends Transformer
 {
     protected $modelClass = Store::class;
 
@@ -20,22 +21,22 @@ class StoreTransformer extends Trans
      */
     public function transform($object)
     {
-        return parent::transform($object) + [
-                'name' => $object->name,
-                'description' => $object->description,
-                'phone' => $object->phone,
-                'email' => $object->email,
-                'website' => $object->website,
-                'facebook' => $object->facebook,
-                'instagram' => $object->instagram,
-                'opening' => $object->opening,
-                'address' => $object->address,
-                'region' => $object->region,
-                'latitude' => $object->latitude,
-                'longitude' => $object->longitude,
-                'logopath' => $object->logopath,
-                'coverpath' => $object->coverpath
-            ];
+        return [
+            'name' => $object->name,
+            'description' => $object->description,
+            'phone' => $object->phone,
+            'email' => $object->email,
+            'website' => $object->website,
+            'facebook' => $object->facebook,
+            'instagram' => $object->instagram,
+            'opening' => $object->opening,
+            'address' => $object->address,
+            'region' => $object->region,
+            'latitude' => $object->latitude,
+            'longitude' => $object->longitude,
+            'logopath' => $object->logopath,
+            'coverpath' => $object->coverpath
+        ];
     }
 
 }

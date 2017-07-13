@@ -1,15 +1,18 @@
 <?php
 
 return [
-    'debug' => true,
+    'debug' => false,
+    'domainName' => 'store',
+    'hostName' => 'http://api.caudatfarm.com',
+    'clientHostName' => 'http://api.caudatfarm.com',
     'cors' => [
         'allowedOrigins' => ['*']
     ],
     'application' => [
-        'title' => 'Micro service API',
-        'description' => 'Micro service API.',
+        'title' => 'The coffee store',
+        'description' => 'For barista',
         'baseUri' => '/',
-        'viewsDir' => __DIR__ . '/../views/',
+        'viewsDir' => __DIR__ . '/../app/Views',
         'loggerUrl' => __DIR__ . '/../logs/errors.log',
     ],
     'authentication' => [
@@ -18,12 +21,10 @@ return [
         'expirationTime' => 86400 * 7, // One week till token expires
     ],
     'services' => [
-        'oss' => [
-            'basicToken' => 'Basic oss_basic_token',
-            'url' => 'http://oss.seedcom.vn/',
+        'user' => [
+            'url' => 'http://user.caudatfarm.local:8080/',
             'action' => [
-                'login' => 'sso/oauth/token',
-                'userInformation' => 'hrapi/employee/getuserinfo'
+                'me' => 'users/me'
             ]
         ]
     ]

@@ -16,10 +16,11 @@ use PhalconRest\Api;
 use Phalcon\Config;
 use Phalcon\DiInterface;
 
-class CollectionBootstrap implements BootstrapInterface
+class CollectionBootstrap extends \CayBua\Bootstrap\CollectionBootstrap implements BootstrapInterface
 {
     public function run(Api $api, DiInterface $di, Config $config)
     {
+        parent::run($api, $di, $config);
         $api->resource(new StoreResource('/store'));
         $api->resource(new AlbumResource('/album'));
         $api->resource(new CommentResource('/comment'));

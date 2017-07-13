@@ -10,8 +10,9 @@ namespace App\Transformers;
 
 
 use App\Model\Comment;
+use PhalconRest\Transformers\Transformer;
 
-class CommentTransformer extends BaseStoreTransformer
+class CommentTransformer extends Transformer
 {
     protected $modelClass = Comment::class;
 
@@ -22,9 +23,9 @@ class CommentTransformer extends BaseStoreTransformer
     public function transform($object)
     {
 
-        return parent::transform($object) + [
-                'mid' => $object->mid,
-                'content' => $object->content
-            ];
+        return [
+            'mid' => $object->mid,
+            'content' => $object->content
+        ];
     }
 }

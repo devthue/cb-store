@@ -9,8 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Album;
+use PhalconRest\Transformers\Transformer;
 
-class AlbumTransformer extends BaseStoreTransformer
+class AlbumTransformer extends Transformer
 {
     protected $modelClass = Album::class;
 
@@ -20,10 +21,10 @@ class AlbumTransformer extends BaseStoreTransformer
      */
     public function transform($object)
     {
-        return parent::transform($object) + [
-                'name' => (string)$object->name,
-                'slug' => (string)$object->slug,
-                'description' => (string)$object->description
-            ];
+        return [
+            'name' => (string)$object->name,
+            'slug' => (string)$object->slug,
+            'description' => (string)$object->description
+        ];
     }
 }

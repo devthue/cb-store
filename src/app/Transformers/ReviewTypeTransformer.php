@@ -9,8 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\ReviewType;
+use PhalconRest\Transformers\Transformer;
 
-class ReviewTypeTransformer extends BaseStoreTransformer
+class ReviewTypeTransformer extends Transformer
 {
     protected $modelClass = ReviewType::class;
 
@@ -20,11 +21,11 @@ class ReviewTypeTransformer extends BaseStoreTransformer
      */
     public function transform($object)
     {
-        return parent::transform($object) + [
-                'parentid' => (int)$object->parentid,
-                'name' => (string)$object->name,
-                'description' => (string)$object->description,
-            ];
+        return [
+            'parentid' => (int)$object->parentid,
+            'name' => (string)$object->name,
+            'description' => (string)$object->description,
+        ];
     }
 
 }
