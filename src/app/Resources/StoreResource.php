@@ -45,10 +45,6 @@ class StoreResource extends ApiResource
             )
             ->endpoint(
                 ApiEndpoint::update()
-            )
-            ->endpoint(
-                ApiEndpoint::get('/search')
-                    ->name('search')
             );
     }
 }
