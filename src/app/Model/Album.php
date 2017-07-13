@@ -8,7 +8,6 @@ class Album extends BaseModel
 {
     public $cid;
     public $uid;
-    public $id;
     public $name;
     public $slug;
     public $description;
@@ -16,9 +15,6 @@ class Album extends BaseModel
     public $status;
     public $isdeleted;
     public $deletedby;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
     public $datedeleted;
 
     public function getSource()
@@ -31,7 +27,6 @@ class Album extends BaseModel
         return parent::columnMap() + [
                 'cid' => 'cid',
                 'uid' => 'uid',
-                'id' => 'id',
                 'name' => 'name',
                 'slug' => 'slug',
                 'description' => 'description',
@@ -39,10 +34,13 @@ class Album extends BaseModel
                 'status' => 'status',
                 'isdeleted' => 'isdeleted',
                 'deletedby' => 'deletedby',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
                 'datedeleted' => 'datedeleted',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', Media::class, 'aid', [
+            'alias' => Media::class,
+        ]);
     }
 }

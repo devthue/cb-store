@@ -10,7 +10,7 @@ namespace App\Transformers;
 
 use App\Model\Store;
 
-class StoreTransformer extends BaseStoreTransformer
+class StoreTransformer extends Trans
 {
     protected $modelClass = Store::class;
 

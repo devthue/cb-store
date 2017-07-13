@@ -8,14 +8,10 @@ class ReviewType extends BaseModel
 {
     public $cid;
     public $uid;
-    public $id;
     public $parentid;
     public $name;
     public $description;
     public $displayorder;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
 
     public function getSource()
     {
@@ -27,14 +23,16 @@ class ReviewType extends BaseModel
         return parent::columnMap() + [
                 'cid' => 'cid',
                 'uid' => 'uid',
-                'id' => 'id',
                 'parentid' => 'parentid',
                 'name' => 'name',
                 'description' => 'description',
                 'displayorder' => 'displayorder',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', ReviewRelTypeProperty::class, 'rtid', [
+            'alias' => ReviewRelTypeProperty::class,
+        ]);
     }
 }

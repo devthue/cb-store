@@ -10,7 +10,6 @@ class Media extends BaseModel
     public $uid;
     public $sid;
     public $aid;
-    public $id;
     public $fileextension;
     public $name;
     public $path;
@@ -20,9 +19,6 @@ class Media extends BaseModel
     public $status;
     public $isdeleted;
     public $deletedby;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
     public $datedeleted;
 
     public function getSource()
@@ -37,7 +33,6 @@ class Media extends BaseModel
                 'uid' => 'uid',
                 'sid' => 'sid',
                 'aid' => 'aid',
-                'id' => 'id',
                 'fileextension' => 'fileextension',
                 'name' => 'name',
                 'path' => 'path',
@@ -47,10 +42,19 @@ class Media extends BaseModel
                 'status' => 'status',
                 'isdeleted' => 'isdeleted',
                 'deletedby' => 'deletedby',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
                 'datedeleted' => 'datedeleted',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', Comment::class, 'mid', [
+            'alias' => Comment::class,
+        ]);
+        $this->belongsTo('aid', Album::class, 'id', [
+            'alias' => Album::class,
+        ]);
+        $this->belongsTo('sid', Store::class, 'id', [
+            'alias' => Store::class,
+        ]);
     }
 }

@@ -82,7 +82,7 @@ try {
     if (!$response || !$response instanceof PhalconApi\Http\Response) {
         $response = new PhalconApi\Http\Response();
     }
-    $debugMode = isset($config->debug) ? $config->debug : (APPLICATION_ENV == 'development');
+    $debugMode = isset($config->debug) ? $config->debug : false;
     $response->setErrorContent($e, $debugMode);
 } finally {
     if (!$response->isSent()) {

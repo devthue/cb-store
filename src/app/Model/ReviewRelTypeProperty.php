@@ -10,12 +10,8 @@ class ReviewRelTypeProperty extends BaseModel
     public $uid;
     public $rtid;
     public $rpid;
-    public $id;
     public $displayorder;
     public $isdefault;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
 
     public function getSource()
     {
@@ -29,12 +25,20 @@ class ReviewRelTypeProperty extends BaseModel
                 'uid' => 'uid',
                 'rtid' => 'rtid',
                 'rpid' => 'rpid',
-                'id' => 'id',
                 'displayorder' => 'displayorder',
                 'isdefault' => 'isdefault',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', ReviewDetail::class, 'rrtpid', [
+            'alias' => ReviewDetail::class,
+        ]);
+        $this->belongsTo('rpid', ReviewProperty::class, 'id', [
+            'alias' => ReviewProperty::class,
+        ]);
+        $this->belongsTo('rtid', ReviewType::class, 'id', [
+            'alias' => ReviewType::class,
+        ]);
     }
 }

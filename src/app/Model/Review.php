@@ -9,7 +9,6 @@ class Review extends BaseModel
     public $cid;
     public $uid;
     public $sid;
-    public $id;
     public $servicefeedback;
     public $improvefeedback;
     public $detail;
@@ -17,9 +16,6 @@ class Review extends BaseModel
     public $status;
     public $isdeleted;
     public $deletedby;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
     public $datedeleted;
 
     public function getSource()
@@ -33,7 +29,6 @@ class Review extends BaseModel
                 'cid' => 'cid',
                 'uid' => 'uid',
                 'sid' => 'sid',
-                'id' => 'id',
                 'servicefeedback' => 'servicefeedback',
                 'improvefeedback' => 'improvefeedback',
                 'detail' => 'detail',
@@ -41,10 +36,16 @@ class Review extends BaseModel
                 'status' => 'status',
                 'isdeleted' => 'isdeleted',
                 'deletedby' => 'deletedby',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
                 'datedeleted' => 'datedeleted',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', ReviewDetail::class, 'rid', [
+            'alias' => ReviewDetail::class,
+        ]);
+        $this->belongsTo('sid', Store::class, 'id', [
+            'alias' => Store::class,
+        ]);
     }
 }

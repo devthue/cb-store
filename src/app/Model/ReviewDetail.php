@@ -10,7 +10,6 @@ class ReviewDetail extends BaseModel
     public $uid;
     public $rid;
     public $rrtpid;
-    public $id;
 
     public function getSource()
     {
@@ -24,7 +23,15 @@ class ReviewDetail extends BaseModel
                 'uid' => 'uid',
                 'rid' => 'rid',
                 'rrtpid' => 'rrtpid',
-                'id' => 'id',
             ];
+    }
+
+    public function initialize() {
+        $this->belongsTo('rid', Review::class, 'id', [
+            'alias' => Review::class,
+        ]);
+        $this->belongsTo('rrtpid', ReviewRelTypeProperty::class, 'id', [
+            'alias' => ReviewRelTypeProperty::class,
+        ]);
     }
 }

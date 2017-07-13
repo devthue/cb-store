@@ -8,7 +8,6 @@ class Store extends BaseModel
 {
     public $cid;
     public $uid;
-    public $id;
     public $name;
     public $description;
     public $phone;
@@ -27,9 +26,6 @@ class Store extends BaseModel
     public $status;
     public $isdeleted;
     public $deletedby;
-    public $ipaddress;
-    public $datecreated;
-    public $datemodified;
     public $datedeleted;
 
     public function getSource()
@@ -42,7 +38,6 @@ class Store extends BaseModel
         return parent::columnMap() + [
                 'cid' => 'cid',
                 'uid' => 'uid',
-                'id' => 'id',
                 'name' => 'name',
                 'description' => 'description',
                 'phone' => 'phone',
@@ -61,10 +56,16 @@ class Store extends BaseModel
                 'status' => 'status',
                 'isdeleted' => 'isdeleted',
                 'deletedby' => 'deletedby',
-                'ipaddress' => 'ipaddress',
-                'datecreated' => 'datecreated',
-                'datemodified' => 'datemodified',
                 'datedeleted' => 'datedeleted',
             ];
+    }
+
+    public function initialize() {
+        $this->hasMany('id', Media::class, 'sid', [
+            'alias' => Media::class,
+        ]);
+        $this->hasMany('id', Review::class, 'sid', [
+            'alias' => Review::class,
+        ]);
     }
 }
