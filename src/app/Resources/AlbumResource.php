@@ -12,8 +12,8 @@ use App\Controllers\AlbumController;
 use App\Model\Album;
 use App\Transformers\AlbumTransformer;
 use CayBua\Constants\AclRoles;
-use CayBua\Resources\ApiResource;
-use PhalconRest\Api\ApiEndpoint;
+use CayBua\Api\ApiResource;
+use CayBua\Api\ApiEndpoint;
 
 class AlbumResource extends ApiResource
 {

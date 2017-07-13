@@ -9,13 +9,13 @@
 namespace App\Resources;
 
 use App\Controllers\StoreController;
+use App\Documentation\StoreDocumentation;
 use App\Model\Store;
 use App\Transformers\StoreTransformer;
 
 use CayBua\Constants\AclRoles;
-use CayBua\Resources\ApiResource;
-
-use PhalconRest\Api\ApiEndpoint;
+use CayBua\Api\ApiResource;
+use CayBua\Api\ApiEndpoint;
 
 class StoreResource extends ApiResource
 {
@@ -33,6 +33,9 @@ class StoreResource extends ApiResource
             ->allow(AclRoles::USER)
             ->endpoint(
                 ApiEndpoint::all()
+                    ->description(StoreDocumentation::ALL_DESCRIPTION)
+                    ->setExampleParameters(StoreDocumentation::ALL_PARAMETERS)
+                    ->exampleResponse(StoreDocumentation::ALL_RESPONSE)
             )
             ->endpoint(
                 ApiEndpoint::find()
@@ -45,8 +48,7 @@ class StoreResource extends ApiResource
             )
             ->endpoint(
                 ApiEndpoint::get('/search')
-                ->name('search')
-            )
-        ;
+                    ->name('search')
+            );
     }
 }

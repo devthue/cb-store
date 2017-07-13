@@ -12,8 +12,8 @@ use App\Controllers\ReviewTypeController;
 use App\Model\ReviewType;
 use App\Transformers\ReviewTypeTransformer;
 use CayBua\Constants\AclRoles;
-use CayBua\Resources\ApiResource;
-use PhalconRest\Api\ApiEndpoint;
+use CayBua\Api\ApiResource;
+use CayBua\Api\ApiEndpoint;
 
 class ReviewTypeResource extends ApiResource
 {

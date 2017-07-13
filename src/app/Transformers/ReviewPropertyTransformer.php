@@ -9,9 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\ReviewProperty;
-use PhalconRest\Transformers\ModelTransformer;
+use PhalconRest\Transformers\Transformer;
 
-class ReviewPropertyTransformer extends ModelTransformer
+class ReviewPropertyTransformer extends Transformer
 {
     protected $modelClass = ReviewProperty::class;
 

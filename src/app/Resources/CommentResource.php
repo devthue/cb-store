@@ -12,8 +12,8 @@ use App\Controllers\CommentController;
 use App\Model\Comment;
 use App\Transformers\CommentTransformer;
 use CayBua\Constants\AclRoles;
-use CayBua\Resources\ApiResource;
-use PhalconRest\Api\ApiEndpoint;
+use CayBua\Api\ApiResource;
+use CayBua\Api\ApiEndpoint;
 
 class CommentResource extends ApiResource
 {

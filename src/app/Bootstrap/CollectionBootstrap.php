@@ -11,7 +11,7 @@ use App\Resources\StoreResource;
 
 use CayBua\BootstrapInterface;
 
-use PhalconRest\Api;
+use CayBua\Api;
 
 use Phalcon\Config;
 use Phalcon\DiInterface;

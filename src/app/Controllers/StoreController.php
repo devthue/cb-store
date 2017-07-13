@@ -12,5 +12,7 @@ use CayBua\Controllers\BaseController;
 
 class StoreController extends BaseController
 {
+    public function beforeHandleAll(){
 
+    }
 }

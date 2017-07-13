@@ -9,9 +9,9 @@
 namespace App\Transformers;
 
 use App\Model\Media;
-use PhalconRest\Transformers\ModelTransformer;
+use PhalconRest\Transformers\Transformer;
 
-class MediaTransformer extends ModelTransformer
+class MediaTransformer extends Transformer
 {
     protected $modelClass = Media::class;
 

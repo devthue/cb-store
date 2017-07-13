@@ -16,6 +16,7 @@ return [
         'loggerUrl' => __DIR__ . '/../logs/errors.log',
     ],
     'authentication' => [
+        'secret' => 'this_should_be_changed',
         'expirationTime' => 86400 * 7, // One week till token expires
     ],
     'services' => [

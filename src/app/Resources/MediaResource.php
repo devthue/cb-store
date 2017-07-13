@@ -12,8 +12,8 @@ use App\Controllers\MediaController;
 use App\Model\Media;
 use App\Transformers\MediaTransformer;
 use CayBua\Constants\AclRoles;
-use CayBua\Resources\ApiResource;
-use PhalconRest\Api\ApiEndpoint;
+use CayBua\Api\ApiResource;
+use CayBua\Api\ApiEndpoint;
 
 class MediaResource extends ApiResource
 {

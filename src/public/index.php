@@ -47,7 +47,7 @@ try {
 
     // Instantiate application & DI
     $di = new PhalconRest\Di\FactoryDefault();
-    $app = new PhalconRest\Api($di);
+    $app = new CayBua\Api($di);
 
     // Bootstrap components
     $bootstrap = new CayBua\Bootstrap(
