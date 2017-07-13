@@ -9,8 +9,8 @@ return [
         'allowedOrigins' => ['*']
     ],
     'application' => [
-        'title' => 'The coffee store',
-        'description' => 'For barista',
+        'title' => 'The coffee store API',
+        'description' => 'For the Barista mobile application and admin website build with reactJS',
         'baseUri' => '/',
         'viewsDir' => __DIR__ . '/../app/Views',
         'loggerUrl' => __DIR__ . '/../logs/errors.log',
