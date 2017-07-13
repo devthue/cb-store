@@ -29,7 +29,8 @@ class StoreResource extends ApiResource
             ->handler(StoreController::class)
             ->itemKey('item')
             ->collectionKey('items')
-            ->allow(AclRoles::UNAUTHORIZED)
+            ->deny(AclRoles::UNAUTHORIZED)
+            ->allow(AclRoles::USER)
             ->endpoint(
                 ApiEndpoint::all()
             )
