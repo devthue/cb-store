@@ -10,7 +10,11 @@ namespace App\Documentation;
 
 class StoreDocumentation
 {
-    const ALL_DESCRIPTION = 'API lấy toàn bộ sanh sách quán cafe đã được tạo.';
+    const ALL_HEADERS = <<<EOD
+```
+Authorization: Bearer [JWT token]
+```
+EOD;
     const ALL_PARAMETERS = <<<EOD
 Name  | Type | Description
 --- | --- | ---

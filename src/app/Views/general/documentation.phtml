@@ -82,6 +82,10 @@
                                 <div class="label label-primary" ng-repeat="role in endpoint.allowedRoles" style="margin-right: 5px">{{ role }}</div>
                             </td>
                         </tr>
+                        <tr ng-show="endpoint.exampleHeaders">
+                            <th>Headers</th>
+                            <th class="markdown" ng-bind-html="endpoint.exampleHeaders"></th>
+                        </tr>
                         <tr ng-show="endpoint.exampleParameters">
                             <th>Parameters</th>
                             <th class="markdown" ng-bind-html="endpoint.exampleParameters"></th>

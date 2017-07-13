@@ -33,7 +33,7 @@ class StoreResource extends ApiResource
             ->allow(AclRoles::USER)
             ->endpoint(
                 ApiEndpoint::all()
-                    ->description(StoreDocumentation::ALL_DESCRIPTION)
+                    ->setExampleHeaders(StoreDocumentation::ALL_HEADERS)
                     ->setExampleParameters(StoreDocumentation::ALL_PARAMETERS)
                     ->exampleResponse(StoreDocumentation::ALL_RESPONSE)
             )

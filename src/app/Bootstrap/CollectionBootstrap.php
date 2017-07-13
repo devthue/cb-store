@@ -10,7 +10,6 @@ use App\Resources\ReviewTypeResource;
 use App\Resources\StoreResource;
 
 use CayBua\BootstrapInterface;
-
 use CayBua\Api;
 
 use Phalcon\Config;
