@@ -22,9 +22,21 @@ class ReviewTransformer extends Transformer
     public function transform($object)
     {
         return [
-            'sid' => $object->sid,
-            'servicefeedback' => $object->servicefeedback,
-            'improvefeedback' => $object->improvefeedback,
+            'cid' => (Integer) $object->cid,
+            'uid' => (Integer) $object->uid,
+            'sid' => (Integer) $object->sid,
+            'id' => (Integer) $object->id,
+            'servicefeedback' => (String) $object->servicefeedback,
+            'improvefeedback' => (String) $object->improvefeedback,
+            'detail' => (String) $object->detail,
+            'displayorder' => (Integer) $object->displayorder,
+            'status' => (Integer) $object->status,
+            'isdeleted' => (Integer) $object->isdeleted,
+            'deletedby' => (Integer) $object->deletedby,
+            'ipaddress' => (Integer) $object->ipaddress,
+            'datecreated' => (Integer) $object->datecreated,
+            'datemodified' => (Integer) $object->datemodified,
+            'datedeleted' => (Integer) $object->datedeleted,
         ];
     }
 }

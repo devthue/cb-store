@@ -22,9 +22,16 @@ class ReviewTypeTransformer extends Transformer
     public function transform($object)
     {
         return [
-            'parentid' => (int)$object->parentid,
-            'name' => (string)$object->name,
-            'description' => (string)$object->description,
+            'cid' => (Integer) $object->cid,
+            'uid' => (Integer) $object->uid,
+            'id' => (Integer) $object->id,
+            'parentid' => (Integer) $object->parentid,
+            'name' => (String) $object->name,
+            'description' => (String) $object->description,
+            'displayorder' => (Integer) $object->displayorder,
+            'ipaddress' => (Integer) $object->ipaddress,
+            'datecreated' => (Integer) $object->datecreated,
+            'datemodified' => (Integer) $object->datemodified,
         ];
     }
 

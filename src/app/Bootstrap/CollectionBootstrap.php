@@ -25,6 +25,6 @@ class CollectionBootstrap extends \CayBua\Bootstrap\CollectionBootstrap implemen
         $api->resource(new CommentResource('/store/comment'));
         $api->resource(new MediaResource('/store/media'));
         $api->resource(new ReviewResource('/store/review'));
-        $api->resource(new ReviewTypeResource('/store/review/type'));
+        $api->resource(new ReviewTypeResource('/store/reviewtype'));
     }
 }

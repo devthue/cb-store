@@ -32,6 +32,18 @@ class StoreResource extends ApiResource
             ->deny(AclRoles::UNAUTHORIZED)
             ->allow(AclRoles::USER)
             ->endpoint(
+                ApiEndpoint::create()
+                    ->setExampleHeaders(StoreDocumentation::CREATE_HEADERS)
+                    ->setExampleParameters(StoreDocumentation::CREATE_PARAMETERS)
+                    ->exampleResponse(StoreDocumentation::CREATE_RESPONSE)
+            )
+            ->endpoint(
+                ApiEndpoint::update()
+                    ->setExampleParameters(StoreDocumentation::UPDATE_PARAMETERS)
+                ->exampleResponse(StoreDocumentation::UPDATE_RESPONSE)
+                ->setExampleHeaders(StoreDocumentation::UPDATE_HEADERS)
+            )
+            ->endpoint(
                 ApiEndpoint::all()
                     ->setExampleHeaders(StoreDocumentation::ALL_HEADERS)
                     ->setExampleParameters(StoreDocumentation::ALL_PARAMETERS)
@@ -39,12 +51,7 @@ class StoreResource extends ApiResource
             )
             ->endpoint(
                 ApiEndpoint::find()
-            )
-            ->endpoint(
-                ApiEndpoint::create()
-            )
-            ->endpoint(
-                ApiEndpoint::update()
+                ->exampleResponse(StoreDocumentation::FIND_RESPONSE)
             );
     }
 }

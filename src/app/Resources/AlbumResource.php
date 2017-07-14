@@ -9,6 +9,7 @@
 namespace App\Resources;
 
 use App\Controllers\AlbumController;
+use App\Documentation\AlbumDocumentation;
 use App\Model\Album;
 use App\Transformers\AlbumTransformer;
 use CayBua\Constants\AclRoles;
@@ -37,10 +38,12 @@ class AlbumResource extends ApiResource
             )
             ->endpoint(
                 ApiEndpoint::create()
+                    ->setExampleHeaders(AlbumDocumentation::CREATE_HEADERS)
+                    ->setExampleParameters(AlbumDocumentation::CREATE_PARAMETERS)
+                    ->exampleResponse(AlbumDocumentation::CREATE_RESPONSE)
             )
             ->endpoint(
                 ApiEndpoint::update()
-            )
-        ;
+            );
     }
 }

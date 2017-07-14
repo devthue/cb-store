@@ -46,7 +46,7 @@ try {
     $config = $config->merge($override);
 
     // Instantiate application & DI
-    $di = new PhalconRest\Di\FactoryDefault();
+    $di = new CayBua\Di\FactoryDefault();
     $app = new CayBua\Api($di);
 
     // Bootstrap components

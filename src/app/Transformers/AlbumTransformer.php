@@ -22,9 +22,20 @@ class AlbumTransformer extends Transformer
     public function transform($object)
     {
         return [
-            'name' => (string)$object->name,
-            'slug' => (string)$object->slug,
-            'description' => (string)$object->description
+            'cid' => (Integer) $object->cid,
+            'uid' => (Integer) $object->uid,
+            'id' => (Integer) $object->id,
+            'name' => (String) $object->name,
+            'slug' => (String) $object->slug,
+            'description' => (String) $object->description,
+            'displayorder' => (Integer) $object->displayorder,
+            'status' => (Integer) $object->status,
+            'isdeleted' => (Integer) $object->isdeleted,
+            'deletedby' => (Integer) $object->deletedby,
+            'ipaddress' => (Integer) $object->ipaddress,
+            'datecreated' => (Integer) $object->datecreated,
+            'datemodified' => (Integer) $object->datemodified,
+            'datedeleted' => (Integer) $object->datedeleted,
         ];
     }
 }

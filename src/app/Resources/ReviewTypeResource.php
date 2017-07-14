@@ -9,6 +9,7 @@
 namespace App\Resources;
 
 use App\Controllers\ReviewTypeController;
+use App\Documentation\ReviewTypeDocumentation;
 use App\Model\ReviewType;
 use App\Transformers\ReviewTypeTransformer;
 use CayBua\Constants\AclRoles;
@@ -31,19 +32,28 @@ class ReviewTypeResource extends ApiResource
             ->allow(AclRoles::USER)
             ->endpoint(
                 ApiEndpoint::all()
+                    ->setExampleHeaders(ReviewTypeDocumentation::ALL_HEADERS)
+                    ->exampleResponse(ReviewTypeDocumentation::ALL_RESPONSE)
             )
             ->endpoint(
                 ApiEndpoint::find()
             )
             ->endpoint(
                 ApiEndpoint::create()
+                    ->setExampleHeaders(ReviewTypeDocumentation::CREATE_HEADERS)
+                    ->setExampleParameters(ReviewTypeDocumentation::CREATE_PARAMETERS)
+                    ->exampleResponse(ReviewTypeDocumentation::CREATE_RESPONSE)
             )
             ->endpoint(
                 ApiEndpoint::update()
+                    ->setExampleHeaders(ReviewTypeDocumentation::CREATE_HEADERS)
+                    ->setExampleParameters(ReviewTypeDocumentation::CREATE_PARAMETERS)
             )
             ->endpoint(
                 ApiEndpoint::get('/tree', 'tree')
                     ->name('tree')
+                    ->setExampleHeaders(ReviewTypeDocumentation::TREE_HEADERS)
+                    ->exampleResponse(ReviewTypeDocumentation::TREE_RESPONSE)
             );
     }
 }

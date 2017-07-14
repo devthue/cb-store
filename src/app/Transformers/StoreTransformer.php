@@ -9,6 +9,7 @@
 namespace App\Transformers;
 
 use App\Model\Store;
+
 use PhalconRest\Transformers\Transformer;
 
 class StoreTransformer extends Transformer
@@ -22,20 +23,31 @@ class StoreTransformer extends Transformer
     public function transform($object)
     {
         return [
-            'name' => $object->name,
-            'description' => $object->description,
-            'phone' => $object->phone,
-            'email' => $object->email,
-            'website' => $object->website,
-            'facebook' => $object->facebook,
-            'instagram' => $object->instagram,
-            'opening' => $object->opening,
-            'address' => $object->address,
-            'region' => $object->region,
-            'latitude' => $object->latitude,
-            'longitude' => $object->longitude,
-            'logopath' => $object->logopath,
-            'coverpath' => $object->coverpath
+            'cid' => (int) $object->cid,
+            'uid' => (int) $object->uid,
+            'id' => (int) $object->id,
+            'name' => (string) $object->name,
+            'description' => (string) $object->description,
+            'phone' => (string) $object->phone,
+            'email' => (string) $object->email,
+            'website' => (string) $object->website,
+            'facebook' => (string) $object->facebook,
+            'instagram' => (string) $object->instagram,
+            'opening' => (string) $object->opening,
+            'address' => (string) $object->address,
+            'region' => (string) $object->region,
+            'latitude' => (int) $object->latitude,
+            'longitude' => (int) $object->longitude,
+            'logopath' => (string) $object->logopath,
+            'coverpath' => (string) $object->coverpath,
+            'displayorder' => (int) $object->displayorder,
+            'status' => (int) $object->status,
+            'isdeleted' => (int) $object->isdeleted,
+            'deletedby' => (int) $object->deletedby,
+            'ipaddress' => (int) $object->ipaddress,
+            'datecreated' => (int) $object->datecreated,
+            'datemodified' => (int) $object->datemodified,
+            'datedeleted' => (int) $object->datedeleted,
         ];
     }
 
